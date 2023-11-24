@@ -147,7 +147,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 Text(
                   'Welcome to the Restaurant Companion!',
                   style: TextStyle(
-                    fontSize: 70,
+                    fontSize: 60,
                     fontWeight: FontWeight.bold,
                     color: Color.fromARGB(255, 223, 24, 9),
                     shadows: [
