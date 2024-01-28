@@ -1,7 +1,5 @@
 // import 'dart:async';
 // import 'package:find_your_restaurant/menu.dart';
-// import 'package:find_your_restaurant/menu.dart';
-// import 'package:find_your_restaurant/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:find_your_restaurant/sign_in.dart';
 
@@ -39,8 +37,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
         Navigator.pushReplacement(
           context,
           PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation) =>
-                const SignIn(),
+            pageBuilder: (context, animation, secondaryAnimation) => SignIn(),
             transitionsBuilder:
                 (context, animation, secondaryAnimation, child) {
               // const begin = Offset(1.0, 0.0);

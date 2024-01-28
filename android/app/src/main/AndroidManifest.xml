@@ -1,8 +1,15 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.find_your_restaurant">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
         android:label="find_your_restaurant"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+        <!-- Add the following meta-data for Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyD9s7hQszcxMZ6ycQ9zbq21PF-apnTaIL4" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -34,6 +34,17 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  firebase_core: ^2.23.0
+  firebase_auth: ^4.14.1
+  google_maps_flutter: ^2.5.0
+  location: ^5.0.3
+  flutter_plugin_android_lifecycle: ^2.0.17
+  google_maps_webservice: ^0.0.20-nullsafety.5
+  google_maps_place_picker_mb: ^3.0.2
+  provider: ^6.1.1
+  async: ^2.11.0
+  image: ^4.1.4
+  cloud_firestore: ^4.14.0
 
 dev_dependencies:
   flutter_test:
@@ -59,7 +70,19 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/image_61fc4e997b.jpg
+    - assets/images/Lacuisine_resto.jpg
+    - assets/images/156757283_Bedford_Hotel__F_B__Botanica_Restaurant_and_Bar__General_View._4500x3000.jpg
     - assets/images/Screenshot 2023-11-22 093831.png
+    - assets/images/content9723.jpg
+    - assets/images/twkylfez1nn91.jpg
+    - assets/images/unnamed-1024x669.jpg
+    - assets/images/0_fjq8yWx1PL-hXw8J.jpg
+    - assets/images/834071-too-restaurant-too-hotel-paris-photos-menu-entrees.jpg
+    - assets/images/restaurant-owner_0.jpg
+    - assets/images/restaurant-owner.jpg
+    - assets/images/Customer experience 1.jpg
+    - assets/images/map-navigation-pin-point-restaurant-icon--14-removebg-preview.png
+    - assets/images/map-navigation-pin-point-restaurant-icon--14-removebg-preview - Copy.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
