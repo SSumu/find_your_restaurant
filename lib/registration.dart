@@ -24,7 +24,7 @@ class Registration extends StatelessWidget {
             shadows: [
               Shadow(
                 color: Colors.green,
-                offset: Offset(2.0, 2.0),
+                offset: Offset(1.0, 1.0),
                 blurRadius: 4.0,
               ),
             ],

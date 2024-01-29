@@ -288,7 +288,11 @@ class __FormContentState extends State<_FormContent> {
                         _rememberMe = value;
                       });
                     },
-                    title: const Text('Remember me'),
+                    title: const Text(
+                      'Remember me',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    tileColor: Colors.transparent,
                     controlAffinity: ListTileControlAffinity.leading,
                     dense: true,
                     contentPadding: const EdgeInsets.all(0),

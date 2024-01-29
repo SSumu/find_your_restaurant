@@ -116,22 +116,21 @@ class _CustomerFormState extends State<CustomerForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text(
-            'Customer Form',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.pink,
-              shadows: [
-                Shadow(
-                  offset: const Offset(2.0, 2.0),
-                  blurRadius: 3.0,
-                  color: Colors.pink.withOpacity(0.5),
-                ),
-              ],
-            ),
+        title: const Text(
+          'Customer Form',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.pink,
+            shadows: [
+              Shadow(
+                offset: Offset(1.0, 1.0),
+                blurRadius: 4.0,
+                color: Colors.pink,
+              ),
+            ],
           ),
         ),
+        centerTitle: true,
         flexibleSpace: const Image(
           image: AssetImage(
             'assets/images/156757283_Bedford_Hotel__F_B__Botanica_Restaurant_and_Bar__General_View._4500x3000.jpg',
@@ -157,23 +156,43 @@ class _CustomerFormState extends State<CustomerForm> {
                     children: [
                       TextField(
                         controller: nameController,
-                        decoration: const InputDecoration(labelText: 'Name'),
+                        decoration: const InputDecoration(
+                          labelText: 'Name',
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 38, 76, 200),
+                        ),
                       ),
                       const SizedBox(
                         height: 16.0,
                       ),
                       TextField(
                         controller: emailController,
-                        decoration: const InputDecoration(labelText: 'Email'),
+                        decoration: const InputDecoration(
+                          labelText: 'Email',
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
                         keyboardType: TextInputType.emailAddress,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 38, 76, 200),
+                        ),
                       ),
                       const SizedBox(
                         height: 16.0,
                       ),
                       TextField(
                         controller: passwordController,
-                        decoration:
-                            const InputDecoration(labelText: 'Password'),
+                        decoration: const InputDecoration(
+                          labelText: 'Password',
+                          labelStyle: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
                         obscureText: true,
                       ),
                       const SizedBox(

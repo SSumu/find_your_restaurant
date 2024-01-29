@@ -70,7 +70,14 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
           'Restaurant Owner Form',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 9, 156, 26),
+            color: Color.fromARGB(255, 44, 211, 64),
+            shadows: [
+              Shadow(
+                color: Color.fromARGB(255, 44, 211, 64),
+                blurRadius: 4.0,
+                offset: Offset(1.0, 1.0),
+              ),
+            ],
           ),
         ),
         flexibleSpace: const Image(
@@ -97,7 +104,9 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                   controller: _restaurantNameController,
                   decoration: const InputDecoration(
                     labelText: 'Restaurant Name',
+                    labelStyle: TextStyle(color: Colors.white),
                   ),
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -106,7 +115,9 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                   controller: _ownerNameController,
                   decoration: const InputDecoration(
                     labelText: 'Owner Name',
+                    labelStyle: TextStyle(color: Colors.white),
                   ),
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -115,7 +126,9 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                   controller: _openingHoursController,
                   decoration: const InputDecoration(
                     labelText: 'Opening Hours',
+                    labelStyle: TextStyle(color: Colors.white),
                   ),
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -124,17 +137,20 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                   controller: _phoneNumberController,
                   decoration: const InputDecoration(
                     labelText: 'Phone Number',
+                    labelStyle: TextStyle(color: Colors.white),
                   ),
                   keyboardType: TextInputType.phone,
+                  style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
-                  height: 5.0,
+                  height: 20.0,
                 ),
                 const Text(
                   'Go to the map and mark your restaurant:',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 16.0,
+                    color: Colors.white,
                   ),
                 ),
                 Center(
@@ -194,7 +210,8 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                         print('Opening Hours: $openingHours');
                         print('Phone Number: $phoneNumber');
                         print(
-                            'Selected Location: ${_selectedLocation!.latitude}, ${_selectedLocation!.longitude}');
+                          'Selected Location: ${_selectedLocation!.latitude}, ${_selectedLocation!.longitude}',
+                        );
                       }
                     },
                     child: const Text('Submit'),
@@ -205,6 +222,7 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                     'Selected Location: ${_selectedLocation!.latitude}, ${_selectedLocation!.longitude}',
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                   ),
               ],
