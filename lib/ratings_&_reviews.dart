@@ -44,7 +44,7 @@ class _RatingsAndReviewsState extends State<RatingsAndReviews> {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
-              'assets/images/unnamed.jpg',
+              'assets/images/star-rating-1.jpg',
             ),
             fit: BoxFit.cover,
           ),

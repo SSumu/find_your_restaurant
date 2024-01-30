@@ -45,6 +45,7 @@ dependencies:
   async: ^2.11.0
   image: ^4.1.4
   cloud_firestore: ^4.14.0
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -83,6 +84,7 @@ flutter:
     - assets/images/Customer experience 1.jpg
     - assets/images/map-navigation-pin-point-restaurant-icon--14-removebg-preview.png
     - assets/images/map-navigation-pin-point-restaurant-icon--14-removebg-preview - Copy.png
+    - assets/images/star-rating-1.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
