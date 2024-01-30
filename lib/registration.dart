@@ -20,12 +20,12 @@ class Registration extends StatelessWidget {
           'Registration',
           style: TextStyle(
             fontSize: 25,
-            fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 63, 181, 100),
+            fontWeight: FontWeight.w900,
+            color: Colors.orange,
             shadows: [
               Shadow(
-                color: Colors.green,
-                offset: Offset(1.0, 1.0),
+                color: Color.fromARGB(255, 181, 112, 27),
+                offset: Offset(2.0, 2.0),
                 blurRadius: 4.0,
               ),
             ],

@@ -47,7 +47,7 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
       _markers.clear();
       _markers.add(
         Marker(
-          markerId: MarkerId('selected-location'),
+          markerId: const MarkerId('selected-location'),
           position: location,
         ),
       );
@@ -69,13 +69,14 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
         title: const Text(
           'Restaurant Owner Form',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Color.fromARGB(255, 44, 211, 64),
+            fontSize: 25,
+            fontWeight: FontWeight.w900,
+            color: Colors.orange,
             shadows: [
               Shadow(
-                color: Color.fromARGB(255, 44, 211, 64),
+                color: Color.fromARGB(255, 181, 112, 27),
+                offset: Offset(2.0, 2.0),
                 blurRadius: 4.0,
-                offset: Offset(1.0, 1.0),
               ),
             ],
           ),
@@ -106,7 +107,7 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                     labelText: 'Restaurant Name',
                     labelStyle: TextStyle(color: Colors.white),
                   ),
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -117,7 +118,7 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                     labelText: 'Owner Name',
                     labelStyle: TextStyle(color: Colors.white),
                   ),
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -128,7 +129,7 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                     labelText: 'Opening Hours',
                     labelStyle: TextStyle(color: Colors.white),
                   ),
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
                   height: 5.0,
@@ -140,7 +141,7 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                     labelStyle: TextStyle(color: Colors.white),
                   ),
                   keyboardType: TextInputType.phone,
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(
                   height: 20.0,

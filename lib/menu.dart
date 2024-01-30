@@ -1,6 +1,7 @@
 import 'package:find_your_restaurant/google_map.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:find_your_restaurant/ratings_&_reviews.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -40,9 +41,11 @@ class Menu extends StatelessWidget {
                   print('Part 1 tapped!');
                 }
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const UserCustomGoogleMap()));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const UserCustomGoogleMap(),
+                  ),
+                );
               },
               child: Container(
                 constraints: const BoxConstraints.expand(height: 134),
@@ -223,6 +226,12 @@ class Menu extends StatelessWidget {
                 if (kDebugMode) {
                   print('Part 5 tapped!');
                 }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const RatingsAndReviews(),
+                  ),
+                );
               },
               child: Container(
                 constraints: const BoxConstraints.expand(height: 134),

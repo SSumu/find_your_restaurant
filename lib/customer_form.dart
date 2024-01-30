@@ -54,12 +54,6 @@ class _CustomerFormState extends State<CustomerForm> {
       setState(() {
         _registrationSuccessful = true;
       });
-
-      await Future.delayed(Duration(microseconds: 100));
-
-      setState(() {
-        message = 'Registration successful';
-      });
     } catch (signInError) {
       try {
         // If signInWithEmailAndPassword fails, proceed with user registration
@@ -112,12 +106,14 @@ class _CustomerFormState extends State<CustomerForm> {
       // await addUserData(name, email);
 
       setState(() {
+        _registrationSuccessful = true;
         message = 'Registration successful';
       });
     } catch (e) {
       print('Error in _registerUser: $e');
 
       setState(() {
+        _registrationSuccessful = false;
         message = 'Registration unsuccessful: $e';
       });
     }
@@ -130,13 +126,14 @@ class _CustomerFormState extends State<CustomerForm> {
         title: const Text(
           'Customer Form',
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.pink,
+            fontSize: 25,
+            fontWeight: FontWeight.w900,
+            color: Colors.orange,
             shadows: [
               Shadow(
-                offset: Offset(1.0, 1.0),
+                color: Color.fromARGB(255, 181, 112, 27),
+                offset: Offset(2.0, 2.0),
                 blurRadius: 4.0,
-                color: Colors.pink,
               ),
             ],
           ),
