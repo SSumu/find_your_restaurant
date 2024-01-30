@@ -11,6 +11,7 @@ class Registration extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.light,
     ));
 
     return Scaffold(

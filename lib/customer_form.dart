@@ -43,43 +43,46 @@ class _CustomerFormState extends State<CustomerForm> {
   }
 
   Future<void> registerUser(String email, String password, String name) async {
-    // bool isRegistrationSuccessful = false;
-
     try {
       await _auth.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-      // String name = nameController.text;
       await addUserData(name, email);
 
       setState(() {
         _registrationSuccessful = true;
       });
 
-      // _auth.authStateChanges().listen((User? user) {
-      //   if (user != null) {
-      //     setState(() {
-      //       message = "Registration successful";
-      //     });
-      //   }
-      // });
-
-      // isRegistrationSuccessful = true;
-    } catch (e) {
-      print("Error creating user: $e");
+      await Future.delayed(Duration(microseconds: 100));
 
       setState(() {
-        message = "Registration unsuccessful: $e";
+        message = 'Registration successful';
       });
-    }
+    } catch (signInError) {
+      try {
+        // If signInWithEmailAndPassword fails, proceed with user registration
+        await _auth.createUserWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
 
-    // setState(() {
-    //   message = isRegistrationSuccessful
-    //       ? "Registration successful"
-    //       : "Registration unsuccessful";
-    // });
+        // String name = nameController.text;
+        await addUserData(name, email);
+
+        setState(() {
+          _registrationSuccessful = true;
+          message = 'Registration successful';
+        });
+      } catch (e) {
+        print("Error creating user: $e");
+
+        setState(() {
+          message = "Registration unsuccessful: $e";
+        });
+      }
+    }
   }
 
   Future<void> addUserData(String name, String email) async {
@@ -106,9 +109,17 @@ class _CustomerFormState extends State<CustomerForm> {
 
     try {
       await registerUser(email, password, name);
-      await addUserData(name, email);
+      // await addUserData(name, email);
+
+      setState(() {
+        message = 'Registration successful';
+      });
     } catch (e) {
       print('Error in _registerUser: $e');
+
+      setState(() {
+        message = 'Registration unsuccessful: $e';
+      });
     }
   }
 
@@ -162,7 +173,7 @@ class _CustomerFormState extends State<CustomerForm> {
                             color: Colors.black,
                           ),
                         ),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color.fromARGB(255, 38, 76, 200),
                         ),
                       ),
@@ -178,7 +189,7 @@ class _CustomerFormState extends State<CustomerForm> {
                           ),
                         ),
                         keyboardType: TextInputType.emailAddress,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Color.fromARGB(255, 38, 76, 200),
                         ),
                       ),
@@ -199,16 +210,8 @@ class _CustomerFormState extends State<CustomerForm> {
                         height: 25.0,
                       ),
                       ElevatedButton(
-                        // onPressed: () async {
-                        //   String name = nameController.text;
-                        //   String email = emailController.text;
-                        //   String password = passwordController.text;
-
-                        //   await registerUser(email, password, name);
-
-                        //   // addUserData(name, email);
-                        // },
-                        onPressed: _registerUser,
+                        onPressed:
+                            _registrationSuccessful ? null : _registerUser,
                         child: const Text('Register'),
                       ),
                     ],
