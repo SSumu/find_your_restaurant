@@ -76,6 +76,7 @@ class _RatingsAndReviewsState extends State<RatingsAndReviews> {
               decoration: const InputDecoration(
                 labelText: 'Write a review...',
                 border: OutlineInputBorder(),
+                filled: true,
               ),
             ),
             const SizedBox(
