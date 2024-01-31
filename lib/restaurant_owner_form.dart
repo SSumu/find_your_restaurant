@@ -137,7 +137,7 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                 TextField(
                   controller: _phoneNumberController,
                   decoration: const InputDecoration(
-                    labelText: 'Phone Number',
+                    labelText: 'Contact Number',
                     labelStyle: TextStyle(color: Colors.white),
                   ),
                   keyboardType: TextInputType.phone,

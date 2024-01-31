@@ -75,9 +75,9 @@ class Registration extends StatelessWidget {
                     ),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                ),
+                // style: ElevatedButton.styleFrom(
+                //   backgroundColor: Colors.green,
+                // ),
                 child: const Text(
                   'Restaurant Owner',
                   style: TextStyle(
@@ -96,9 +96,9 @@ class Registration extends StatelessWidget {
                     ),
                   );
                 },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                ),
+                // style: ElevatedButton.styleFrom(
+                //   backgroundColor: Colors.blue,
+                // ),
                 child: const Text(
                   'Customer',
                   style: TextStyle(
