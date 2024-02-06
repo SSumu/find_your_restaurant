@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:find_your_restaurant/customer_form.dart';
 
 class Registration extends StatelessWidget {
-  const Registration({Key? key}) : super(key: key);
+  const Registration({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +92,7 @@ class Registration extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CustomerForm(),
+                      builder: (context) => const CustomerForm(),
                     ),
                   );
                 },

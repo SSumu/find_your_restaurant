@@ -8,32 +8,30 @@ class RestaurantOwnerForm extends StatefulWidget {
   final OnMapCreatedCallback onMapCreated;
 
   const RestaurantOwnerForm({
-    Key? key,
+    super.key,
     required this.onMapCreated,
-  }) : super(key: key);
+  });
 
   @override
   State<RestaurantOwnerForm> createState() => _RestaurantOwnerFormState();
 }
 
 class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
-  TextEditingController _restaurantNameController = TextEditingController();
-  TextEditingController _ownerNameController = TextEditingController();
-  TextEditingController _phoneNumberController = TextEditingController();
-  TextEditingController _openingHoursController = TextEditingController();
+  final TextEditingController _restaurantNameController = TextEditingController();
+  final TextEditingController _ownerNameController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
+  final TextEditingController _openingHoursController = TextEditingController();
 
   GoogleMapController? _mapController;
   LatLng? _selectedLocation;
-  Set<Marker> _markers = {};
+  final Set<Marker> _markers = {};
 
   void _onMapCreated(GoogleMapController controller) {
     setState(() {
       _mapController = controller;
     });
-    if (widget.onMapCreated != null) {
-      widget.onMapCreated(controller);
+    widget.onMapCreated(controller);
     }
-  }
 
   void _selectLocation(LatLng location) {
     setState(() {
@@ -181,7 +179,7 @@ class _RestaurantOwnerFormState extends State<RestaurantOwnerForm> {
                   height: 5.0,
                 ),
                 if (_selectedLocation != null)
-                  Container(
+                  SizedBox(
                     height: 200.0,
                     child: GoogleMap(
                       initialCameraPosition: CameraPosition(

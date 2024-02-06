@@ -11,7 +11,7 @@ class RatingsAndReviews extends StatefulWidget {
 
 class _RatingsAndReviewsState extends State<RatingsAndReviews> {
   double _rating = 0;
-  TextEditingController _reviewController = TextEditingController();
+  final TextEditingController _reviewController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

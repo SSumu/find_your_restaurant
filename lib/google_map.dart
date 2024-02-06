@@ -1,14 +1,9 @@
-import 'dart:ffi' as ffi;
-import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart' as places;
 import 'package:location/location.dart';
 import 'package:flutter/services.dart';
-import 'dart:typed_data';
-import 'dart:ui' as ui;
 import 'package:image/image.dart' as img;
 
 class Debouncer {
@@ -57,11 +52,11 @@ class UserCustomGoogleMap extends StatefulWidget {
   final Function(LatLng)? onMapTap;
 
   const UserCustomGoogleMap({
-    Key? key,
+    super.key,
     this.onLocationSelected,
     this.onMapCreated,
     this.onMapTap,
-  }) : super(key: key);
+  });
 
   @override
   UserCustomGoogleMapState createState() => UserCustomGoogleMapState();
@@ -75,10 +70,10 @@ class UserCustomGoogleMapState
   bool _serviceEnabled = false;
   PermissionStatus? _permissionGranted;
   LocationData? _locationData;
-  TextEditingController _searchController = TextEditingController();
+  final TextEditingController _searchController = TextEditingController();
   SearchBox? _searchBox;
   LatLng? _selectedLocation;
-  Set<Marker> _markers = {};
+  final Set<Marker> _markers = {};
 
   // final String darkMapStyle =
   //     '''[{"elementType": "geometry","stylers": [{"color": "#1d1d1d"}]},{"elementType": "labels.text.fill","stylers": [{"color": "#ffffff"}]},]''';
@@ -209,7 +204,7 @@ class UserCustomGoogleMapState
 
   Future<BitmapDescriptor> _loadRestaurantIcon() async {
     return await BitmapDescriptor.fromAssetImage(
-      ImageConfiguration(
+      const ImageConfiguration(
         size: Size(1, 1),
       ),
       'assets/images/map-navigation-pin-point-restaurant-icon--14-removebg-preview.png',
@@ -389,7 +384,7 @@ class LightBeamPainter extends CustomPainter {
       ..color = Colors.yellow.withOpacity(0.2)
       ..blendMode = BlendMode.plus;
 
-    final double beamLength = 300.0;
+    const double beamLength = 300.0;
 
     final LatLng userLatLng = LatLng(
       locationData?.latitude ?? 0.0,
@@ -398,7 +393,7 @@ class LightBeamPainter extends CustomPainter {
 
     final ScreenCoordinate userScreenCoordinate =
         (await controller?.getScreenCoordinate(userLatLng) ??
-            ScreenCoordinate(x: 0, y: 0));
+            const ScreenCoordinate(x: 0, y: 0));
     final ScreenCoordinate endPointScreen = ScreenCoordinate(
       x: (userScreenCoordinate.x + beamLength).toInt(),
       y: userScreenCoordinate.y.toInt(),
@@ -437,9 +432,8 @@ class SearchBox extends StatefulWidget {
     required this.focusNode,
     required List<places.Prediction> suggestions,
     this.onMapTap,
-    Key? key,
-  })  : suggestions = List.from(suggestions),
-        super(key: key);
+    super.key,
+  })  : suggestions = List.from(suggestions);
 
   SearchBox copyWith({
     List<places.Prediction>? suggestions,
@@ -467,7 +461,7 @@ class SearchBox extends StatefulWidget {
 class _SearchBoxState extends State<SearchBox> {
   String _sessionToken;
   late LocationData locationData;
-  late Debouncer _debouncer;
+  late final Debouncer _debouncer;
 
   final FocusNode _focusNode = FocusNode();
 
@@ -493,14 +487,14 @@ class _SearchBoxState extends State<SearchBox> {
               widget.clearSuggestions();
               widget.onMapTap?.call();
             },
-            child: Container(
+            child: SizedBox(
               height: 60,
               child: TextField(
                 controller: widget.searchController,
                 focusNode: _focusNode,
                 decoration: InputDecoration(
                   hintText: 'Search for restaurant...',
-                  suffixIcon: Icon(Icons.search),
+                  suffixIcon: const Icon(Icons.search),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
@@ -570,7 +564,7 @@ class _SearchBoxState extends State<SearchBox> {
                   return ListTile(
                     title: Text(
                       prediction.description ?? '',
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                     onTap: () {
                       widget.onSuggestionSelected(prediction.description ?? '');
